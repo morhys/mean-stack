@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="projectApp"> 
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+      <!-- Meetups View -->
+      <div ng-controller="projectsController">
+        <h1>There are {{projects.length}} Projects</h1>
+        <ul>
+          <li ng-repeat="project in projects">
+            {{project.title}}
+            {{project.description}}
+          </li>
+        </ul>
+        <form ng-submit="createProject()">
+          <input type="text" placeholder="Project title" ng-model="projectTitle"></input>
+          <input type="text" placeholder="Project description" ng-model="projectDescription"></input>
+          <button type="submit">Add</button>
+        </form> 
+      </div>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+
+      <script type="text/javascript" src="/js/app.js"></script>
+      <script type="text/javascript" src="/js/controllers/projects-controller.js"></script>
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
